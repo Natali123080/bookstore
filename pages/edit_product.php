@@ -13,11 +13,11 @@
 <form class="border border-info rounded p-4 w-50 mx-auto" method="POST" action="./handlers/handle_edit_product.php" enctype="multipart/form-data">
     <h3 class="text-center">Edit book</h3>
     <div class="mb-3">
-        <label for="bookTitle" class="form-label" >Book Title</label>
+        <label for="bookTitle" class="form-label">Book Title</label>
         <input type="text" class="form-control" id="bookTitle" placeholder="Enter book title" required name="title" value="<?php echo $product['title'] ?? '' ?>" autocomplete="off">
     </div>
     <div class="mb-3">
-        <label for="bookAuthor" class="form-label" >Author</label>
+        <label for="bookAuthor" class="form-label">Author</label>
         <input type="text" class="form-control" id="bookAuthor" placeholder="Enter author name" required name="author" autocomplete="off" value="<?php echo $product['author'] ?? '' ?>">
     </div>
     <div class="mb-3">
@@ -33,7 +33,7 @@
         </select>
     </div>
     <div class="mb-3">
-        <label for="price" class="form-label" >Price</label>
+        <label for="price" class="form-label">Price</label>
         <input type="number" step="0.01" class="form-control" id="price" name="price" autocomplete="off" value="<?php echo $product['price'] ?? '' ?>">
     </div>
     <div class="mb-3">
@@ -43,9 +43,10 @@
     <div class="mb-3">
         <img class="img-fluid" src="uploads/<?php echo $product['image'] ?>" alt="<?php echo $product['title'] ?>">
     </div>
-    <input type="hidden" name="id" value="<?php echo $product['id'] ?>">
+    <input type="hidden" name="id" value="<?php echo $product['id'] ?>"> <!-- Ensure the product ID is passed -->
     <button type="submit" class="btn btn-outline-light mx-auto">Edit</button>
 </form>
+
 <style>
     .btn-outline-light {
         background-color: #4ca1af;
